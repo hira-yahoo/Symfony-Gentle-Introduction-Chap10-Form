@@ -52,4 +52,35 @@ $this->form = $articleForm;
   }
 
 
+  public function executeUsingPropelChoice(sfWebRequest $request)
+  {
+    //     $this->forward('default', 'module');
+    if ($request->isMethod('post'))
+    {
+      $this->section_id = $request->getParameter('section_id');
+      return $this->setTemplate('usingPropelChoiceResult');
+    }
+
+
+    $articleForm = new sfForm();
+    $articleForm->setWidgets(array(
+        'id'        => new sfWidgetFormInputHidden(),
+        'title'     => new sfWidgetFormInputText(),
+        'section_id' => new sfWidgetFormPropelChoice(array(
+            'model'  => 'Section',
+            //     'column' => 'name'
+        )
+        )));
+
+    $this->form = $articleForm;
+    /*
+     $this->form->setWidgets(array(
+         'name'    => new sfWidgetFormInputText(),
+         'email'   => new sfWidgetFormInputText(array('default' => 'me@example.com')),
+         'subject' => new sfWidgetFormChoice(array('choices' => array('Subject A', 'Subject B', 'Subject C'))),
+         'message' => new sfWidgetFormTextarea(),
+     ));
+    */
+  }
+
 }
