@@ -22,6 +22,20 @@ class fooActions extends sfActions
 
   public function executeContact(sfWebRequest $request)
   {
+    $years = range(1950, 1990);
+    $form = new sfForm();
+    $form->setWidget('dob', new sfWidgetFormDate(array(
+        'label'   => 'Date of birth',
+        'default' => '01/01/1950',  // タイムスタンプか、strtotime() で認識可能な文字列
+        'years'   => array_combine($years, $years)
+    )));
+
+    $form->setWidget('start', new sfWidgetFormTime(array('default' => '12:00')));
+    $form->setWidget('end', new sfWidgetFormDateTime(array('default' => '01/01/2008 12:00')));
+
+    $this->form = $form;
+
+/*
 //     $this->forward('default', 'module');
     if ($request->isMethod('post'))
     {
@@ -41,6 +55,9 @@ $articleForm->setWidgets(array(
 )));
 
 $this->form = $articleForm;
+ */
+
+
 /*
     $this->form->setWidgets(array(
       'name'    => new sfWidgetFormInputText(),
