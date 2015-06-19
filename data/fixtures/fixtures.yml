@@ -17,9 +17,12 @@
 #     email:    kris.wallsmith@symfony-project.com
 Section:
   Headline:
-    name: "nidashi"
+    name: "midashi"
+    sentence: "midashi no sentence"
   Employment:
     name: "kyujin"
+    sentence: "kyujin no sentence"
   Editorial:
     name: "shasetsu"
+    sentence: "shasetsu no sentence"
 

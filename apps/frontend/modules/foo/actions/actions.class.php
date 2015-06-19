@@ -23,6 +23,12 @@ class fooActions extends sfActions
   public function executeContact(sfWebRequest $request)
   {
 //     $this->forward('default', 'module');
+    if ($request->isMethod('post'))
+    {
+      $this->section_id = $request->getParameter('section_id');
+      return $this->setTemplate('result');
+    }
+
 
 $articleForm = new sfForm();
 $articleForm->setWidgets(array(

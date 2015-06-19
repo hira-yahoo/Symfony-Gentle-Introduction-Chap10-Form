@@ -20,6 +20,7 @@ class Section extends BaseSection {
 
   public function __toString()
   {
-    return $this->getName();
+//     return $this->getName();
+    return $this->getSentence();
   }
 } // Section

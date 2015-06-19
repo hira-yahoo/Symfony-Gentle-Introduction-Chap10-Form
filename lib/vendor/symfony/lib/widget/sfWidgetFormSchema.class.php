@@ -556,6 +556,9 @@ class sfWidgetFormSchema extends sfWidgetForm implements ArrayAccess
       }
       else
       {
+if ($name == "section_id") {
+  Utility::log("stop");
+}
         $field = $this->renderField($name, $value, $widgetAttributes, $error);
 
         // don't add a label tag and errors if we embed a form schema

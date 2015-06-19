@@ -12,11 +12,13 @@ abstract class BaseSectionFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'name' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'name'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'sentence' => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'name' => new sfValidatorPass(array('required' => false)),
+      'name'     => new sfValidatorPass(array('required' => false)),
+      'sentence' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('section_filters[%s]');
@@ -34,8 +36,9 @@ abstract class BaseSectionFormFilter extends BaseFormFilterPropel
   public function getFields()
   {
     return array(
-      'id'   => 'Number',
-      'name' => 'Text',
+      'id'       => 'Number',
+      'name'     => 'Text',
+      'sentence' => 'Text',
     );
   }
 }

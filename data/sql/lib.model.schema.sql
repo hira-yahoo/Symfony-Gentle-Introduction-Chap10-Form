@@ -14,6 +14,7 @@ CREATE TABLE `section`
 (
 	`id` INTEGER(11)  NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255)  NOT NULL,
+	`sentence` VARCHAR(255)  NOT NULL,
 	PRIMARY KEY (`id`)
 )Engine=InnoDB;
 
