@@ -23,14 +23,26 @@ class fooActions extends sfActions
   public function executeContact(sfWebRequest $request)
   {
 //     $this->forward('default', 'module');
-    $this->form = new sfForm();
 
+$articleForm = new sfForm();
+$articleForm->setWidgets(array(
+  'id'        => new sfWidgetFormInputHidden(),
+  'title'     => new sfWidgetFormInputText(),
+  'section_id' => new sfWidgetFormPropelChoice(array(
+    'model'  => 'Section',
+//     'column' => 'name'
+  )
+)));
+
+$this->form = $articleForm;
+/*
     $this->form->setWidgets(array(
       'name'    => new sfWidgetFormInputText(),
       'email'   => new sfWidgetFormInputText(array('default' => 'me@example.com')),
       'subject' => new sfWidgetFormChoice(array('choices' => array('Subject A', 'Subject B', 'Subject C'))),
       'message' => new sfWidgetFormTextarea(),
     ));
+ */
   }
 
 

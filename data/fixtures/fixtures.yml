@@ -15,3 +15,11 @@
 #     password: changeme
 #     name:     Kris Wallsmith
 #     email:    kris.wallsmith@symfony-project.com
+Section:
+  Headline:
+    name: "nidashi"
+  Employment:
+    name: "kyujin"
+  Editorial:
+    name: "shasetsu"
+

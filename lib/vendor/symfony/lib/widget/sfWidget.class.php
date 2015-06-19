@@ -3,7 +3,7 @@
 /*
  * This file is part of the symfony package.
  * (c) Fabien Potencier <fabien.potencier@symfony-project.com>
- * 
+ *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -44,6 +44,9 @@ abstract class sfWidget
     $optionKeys = array_keys($options);
 
     // check option names
+Utility::log("optionKeys: ".var_export($optionKeys, true));
+Utility::log("currentOptionKeys: ".var_export($currentOptionKeys, true));
+Utility::log("requiredOptions: ".var_export($this->requiredOptions, true));
     if ($diff = array_diff($optionKeys, array_merge($currentOptionKeys, $this->requiredOptions)))
     {
       throw new InvalidArgumentException(sprintf('%s does not support the following options: \'%s\'.', get_class($this), implode('\', \'', $diff)));
